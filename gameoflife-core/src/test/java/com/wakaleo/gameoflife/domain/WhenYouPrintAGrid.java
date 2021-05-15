@@ -48,6 +48,22 @@ public class WhenYouPrintAGrid {
     }
 
     @Test
+    public void shouldReturnEmptyString() {
+        //GIVEN
+        Cell[][] gridContents = {
+            {},
+        };
+
+        //WHEN
+
+        GridWriter gridWriter = new GridWriter();
+        String printedGrid = gridWriter.convertToString(gridContents);
+
+        //THEN
+        assertThat(printedGrid,isEmptyString());
+    }
+
+    @Test
     public void shouldBeAbleToReadALargeStringGridContainingLiveAndDeadCells() {
         Cell[][] gridContents = {
                 {LIVE_CELL, DEAD_CELL, DEAD_CELL, LIVE_CELL, DEAD_CELL, DEAD_CELL, LIVE_CELL, DEAD_CELL, DEAD_CELL, LIVE_CELL, DEAD_CELL, DEAD_CELL},
