@@ -60,7 +60,7 @@ public class WhenYouPrintAGrid {
         String printedGrid = gridWriter.convertToString(gridContents);
 
         //THEN
-        assertThat(printedGrid,isEmptyString());
+        assertThat(printedGrid,is(""));
     }
 
     @Test
