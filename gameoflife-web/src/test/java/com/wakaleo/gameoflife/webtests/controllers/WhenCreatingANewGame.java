@@ -43,5 +43,23 @@ public class WhenCreatingANewGame {
         assertThat((Integer) homeView.getModel().get("columns"), is(5));
 
     }
+
+    @Test
+    public void test() {
+        //GIVEN
+        int row = 3;
+        int column = 3;
+
+        MockHttpServletRequest request = new MockHttpServletRequest();
+        request.setParameter("cell_1_1", "something");
+
+        //WHEN
+        ModelAndView homeView = underTest.firstGeneration(row, column, request);
+
+        //THEN
+        assertThat((Integer) homeView.getModel().get("rows"), is(3));
+        assertThat((Integer) homeView.getModel().get("columns"), is(3));
+
+    }
 }	
 
